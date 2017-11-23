@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { mainRoutes } from './main.routes';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { mainRoutes } from './main.routes';
     CoreModule,
     RouterModule.forChild(mainRoutes)
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, RegisterComponent]
 })
 export class MainModule { }
