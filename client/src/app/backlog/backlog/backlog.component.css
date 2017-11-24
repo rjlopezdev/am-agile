@@ -1,0 +1,15 @@
+.options-icon {
+    color: grey;
+}
+
+.options-icon:hover {
+    color: black;
+}
+
+.backlog-container:hover {
+    background-color: #ECECEC;
+}
+
+hr {
+    margin: 0px;
+}

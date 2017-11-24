@@ -1,0 +1,93 @@
+<div class="container">
+  <h1 class="text-center">Product Backlog</h1>
+  <div class="d-flex justify-content-between">
+
+    <!-- Filters -->
+    <div class="flex-column dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="filterMenu" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <i class="fa fa-filter" aria-hidden="true"></i> Filters
+      </button>
+      <div class="dropdown-menu" aria-labelledby="filterMenu">
+        <a class="dropdown-item" href="#">ID</a>
+        <a class="dropdown-item" href="#">Type</a>
+        <a class="dropdown-item" href="#">Status</a>
+      </div>
+    </div>
+
+    <!-- ADD Button -->
+    <div class="flexcolumn" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <button class="btn btn-primary" type="submit">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add new Epic
+      </button>
+    </div>
+  </div>
+  <br>
+</div>
+
+<!-- List of Epics -->
+<div class="container text-white bg-primary font-weight-bold rounded">
+  <div class="row text-center">
+    <div class="col-12 col-md-2"> ID </div>
+    <div class="col-12 col-md-1"> Type </div>
+    <div class="col-12 col-md-4"> Name </div>
+    <div class="col-12 col-md-2"> Assigned to </div>
+    <div class="col-12 col-md-2"> Status </div>
+    <div class="col-3 col-md-1">  </div>
+  </div>
+  <hr>
+</div>
+
+<!-- Add Epic Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="row">
+            <div class="col-10">
+              <!-- Epic Name -->
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Name:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+            </div>
+            <div class="col-2">
+              <!-- Epic Priority -->
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Priority</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12">
+              <!-- Description -->
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Description</label>
+                <textarea class="form-control" id="message-text" rows="4"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Add & Cancel options -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-backlog-item></app-backlog-item>

@@ -1,0 +1,76 @@
+<div class="container backlog-container">
+  <div class="row">
+    <!-- ID -->
+    <div class="col-4 col-md-2 epic-id font-weight-bold" (click)="isCollapsed = !isCollapsed">
+      <span class="badge badge-pill badge-light">
+        <i class="fa" [ngClass]="{ 'fa-chevron-right': isCollapsed, 'fa-level-down': !isCollapsed }" aria-hidden="true">
+        </i>
+      </span>
+      EP{{epic.ID}}
+    </div>
+    <!-- TYPE -->
+    <div class="col-12 col-md-1">
+      <span class="badge badge-success epic-badge">EPIC</span>
+    </div>
+    <!-- NAME -->
+    <div class="col-12 col-md-4 text-truncate epic-name">
+      <i class="flaticon-epic epic-icon hidden-xs-up"></i>
+      {{epic.name}}
+    </div>
+    <!-- ASSIGNED TO -->
+    <div class="col-12 col-md-2">
+      <div class="dropdown-toggle" id="assignedToButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        {{epic.assignedTo}}
+      </div>
+      &nbsp;
+      <div class="dropdown-menu" aria-labelledby="assignedToMenu">
+        <button class="dropdown-item" type="button">
+          First
+        </button>
+        <button class="dropdown-item" type="button">
+          Second
+        </button>
+        <button class="dropdown-item" type="button">
+          Third
+        </button>
+      </div>
+    </div>
+    <!-- STATUS -->
+    <div class="col-12 col-md-2">
+      <span class="badge badge-success dropdown-toggle" id="statusMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</span>
+      &nbsp;
+      <div class="dropdown-menu" aria-labelledby="statusMenu">
+        <button class="dropdown-item" type="button">
+          <i class="fa fa-circle text-success" aria-hidden="true"></i>
+          Success
+        </button>
+        <button class="dropdown-item" type="button">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          Success
+        </button>
+        <button class="dropdown-item" type="button">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          Success
+        </button>
+      </div>
+    </div>
+    <!-- OPTIONS -->
+    <div class="col-3 col-md-1">
+      <span class="badge badge-pill badge-light" aria-hidden="true" id="optionsMenu" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <i class="fa fa-lg fa-ellipsis-h options-icon"></i>
+      </span>
+      <div class="dropdown-menu" aria-labelledby="optionsMenu">
+        <button class="dropdown-item" type="button">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          Delete
+        </button>
+        <button class="dropdown-item" type="button">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          Edit</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
