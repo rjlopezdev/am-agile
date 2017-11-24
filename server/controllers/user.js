@@ -19,6 +19,29 @@ function signUp (req, res) {
   })
 }
 
+function signIn (req, res) {
+  User.findOne({email: req.body.email}, (err, user) => {
+    if (err) {
+      return res.status(500).send({message: err})
+    }
+
+    if (!user) {
+      return res.status(404).send({message: `User does not exists`})
+    }
+
+    bcrypt.compare(req.body.password, user.password)
+      .then(function (match) {
+        if (!match) {
+          return res.status(400).send({message: `Invalid username or password`})
+        }
+
+        req.user = user
+        return res.status(200).send({token: jwt.createToken(user)})
+      })
+  }).select('+password')
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }
