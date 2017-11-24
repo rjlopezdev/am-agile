@@ -37,6 +37,7 @@ function decodeToken (token) {
       )
     }
   })
+  
   return decoded
 }
 
